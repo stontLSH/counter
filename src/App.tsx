@@ -1,6 +1,4 @@
 import { useState, ChangeEvent } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
@@ -16,6 +14,10 @@ function App() {
 
   const handleClick = () => {
     setCount((prev) => prev + Number(number || 0));
+  };
+
+  const handleReset = () => {
+    setCount(0);
     setNumber('');
   };
 
@@ -38,6 +40,9 @@ function App() {
           <button onClick={handleClick} disabled={error || number === ''}>
             count is {count}
           </button>
+        </div>
+        <div>
+          <button onClick={handleReset}>reset</button>
         </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
